@@ -13,9 +13,9 @@ import pygame
 # Make two excel files for photo database and attendance sheet database
 
 # Load the Excel workbooks
-photo_db_wb = load_workbook("photodatabase.xlsx")
+photo_db_wb = load_workbook("User.xlsx")
 photo_db_ws = photo_db_wb.active
-attendance_wb = load_workbook("attendancesheet.xlsx")
+attendance_wb = load_workbook("Attendance.xlsx")
 attendance_ws = attendance_wb.active
 
 # Set the timer for 5 minutes (300 seconds)
@@ -36,7 +36,7 @@ for col in range(3, 17):  # Assuming C2 to P2 for attendance
     cell = attendance_ws.cell(row=2, column=col)
     if cell.value is None:  # Find the first empty cell
         cell.value = current_date  # Set the current date
-        attendance_wb.save('attendancesheet.xlsx')
+        attendance_wb.save('Attendance.xlsx')
         attendance_column = col  # Store the column index for attendance
         column_found = True
         break
@@ -157,7 +157,7 @@ while True:
             for row in range(3, attendance_ws.max_row+1):  # Assuming student names are in rows 3 to 13
                 if attendance_ws.cell(row=row, column=2).value == name:
                     attendance_ws.cell(row=row, column=attendance_column).value = 'P'
-                    attendance_wb.save('attendancesheet.xlsx')
+                    attendance_wb.save('Attendance.xlsx')
                     sound1.play()  # Play sound
                     attendance_marked[name] = True  # Mark attendance as done
                     break
@@ -167,7 +167,7 @@ while True:
         for row in range(3, attendance_ws.max_row+1):
             if attendance_ws.cell(row=row, column=attendance_column).value != 'P':
                 attendance_ws.cell(row=row, column=attendance_column).value = 'A'
-                attendance_wb.save('attendancesheet.xlsx')
+                attendance_wb.save('Attendance.xlsx')
 
     # End the program when the timer runs out
     if remaining_time <= 0:
