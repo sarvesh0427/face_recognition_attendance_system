@@ -10,6 +10,7 @@ import pygame
 # It captures student images and stores them in a photodatabase Excel file with the corresponding student names.
 # The system then marks attendance by writing 'P' to the student names into an AttendanceSheet if student is present on that day.
 # The attendance will be marked for 15 days, and the real date will be recorded for each entry.
+# Make two excel files for photo database and attendance sheet database
 
 # Load the Excel workbooks
 photo_db_wb = load_workbook("photodatabase.xlsx")
@@ -18,7 +19,7 @@ attendance_wb = load_workbook("attendancesheet.xlsx")
 attendance_ws = attendance_wb.active
 
 # Set the timer for 5 minutes (300 seconds)
-TIMER = 1 * 60
+TIMER = 5 * 60
 start_time = time.time()
 
 # Initialize the sound system for attendance confirmation
