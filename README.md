@@ -25,3 +25,4 @@ datetime
 Future Improvements
 Switch from Excel to a more robust database like SQLite or MySQL for better scalability.
 Implement a GUI using Tkinter to handle user registration and view attendance logs more easily.
+Note: use numpy 1.26.4
