@@ -25,7 +25,7 @@ This project demonstrates a **face recognition system** developed using **Python
 
 ## **Requirements**  
 
-🔹 **Python 3.x**  
+🔹 **Python 3.12**  
 🔹 Install the required packages using:  
 ```bash
 pip install face_recognition opencv-python openpyxl numpy==1.26.4 pygame datetime
