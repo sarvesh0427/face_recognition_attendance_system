@@ -1,0 +1,6 @@
+face_recognition
+pygame
+openpyxl
+dlib
+cv2
+numpy
